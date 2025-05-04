@@ -1,114 +1,115 @@
 body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  background: #f4f4f4;
-  color: #333;
-}
+      font-family: "Arial", sans-serif;
+        margin: 0;
+          background: #f4f4f4;
+            color: #333;
+            }
 
-header, footer {
-  background-color: #111;
-  color: white;
-  text-align: center;
-  padding: 1em;
-}
+            header, footer {
+              background-color: #111;
+                color: white;
+                  text-align: center;
+                    padding: 1em;
+                    }
 
-main {
-  display: flex;
-  justify-content: center;
-  padding: 2em;
-}
+                    main {
+                      display: flex;
+                        justify-content: center;
+                          padding: 2em;
+                          }
 
-.product-card {
-  background: white;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
-}
+                          .product-card {
+                            background: white;
+                              padding: 2em;
+                                border-radius: 12px;
+                                  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+                                    max-width: 400px;
+                                      width: 100%;
+                                        text-align: center;
+                                        }
 
-.price {
-  font-size: 1.2em;
-  color: #e60012;
-  margin: 1em 0;
-}
+                                        .price {
+                                          font-size: 1.2em;
+                                            color: #e60012;
+                                              margin: 1em 0;
+                                              }
 
-.pricing {
-  text-align: left;
-  margin-top: 1.5em;
-  background: #fff8e1;
-  padding: 1em;
-  border-radius: 8px;
-  border-left: 5px solid #ffa000;
-}
+                                              .pricing {
+                                                text-align: left;
+                                                  margin-top: 1.5em;
+                                                    background: #fff8e1;
+                                                      padding: 1em;
+                                                        border-radius: 8px;
+                                                          border-left: 5px solid #ffa000;
+                                                          }
 
-.pricing h3 {
-  margin-top: 0;
-  color: #e65100;
-}
+                                                          .pricing h3 {
+                                                            margin-top: 0;
+                                                              color: #e65100;
+                                                              }
 
-.pricing ul {
-  padding-left: 1.2em;
-  list-style: none;
-}
+                                                              .pricing ul {
+                                                                padding-left: 1.2em;
+                                                                  list-style: none;
+                                                                  }
 
-.pricing li {
-  margin: 0.3em 0;
-}
+                                                                  .pricing li {
+                                                                    margin: 0.3em 0;
+                                                                    }
 
-.payment-options button {
-  margin: 0.5em;
-  padding: 0.8em 1.5em;
-  font-size: 1em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
+                                                                    .payment-options button {
+                                                                      margin: 0.5em;
+                                                                        padding: 0.8em 1.5em;
+                                                                          font-size: 1em;
+                                                                            border: none;
+                                                                              border-radius: 8px;
+                                                                                cursor: pointer;
+                                                                                }
 
-.payment-options button:first-child {
-  background-color: #09bb07;
-  color: white;
-}
+                                                                                .payment-options button:first-child {
+                                                                                  background-color: #09bb07;
+                                                                                    color: white;
+                                                                                    }
 
-.payment-options button:last-child {
-  background-color: #ffcc00;
-  color: black;
-}
+                                                                                    .payment-options button:last-child {
+                                                                                      background-color: #ffcc00;
+                                                                                        color: black;
+                                                                                        }
 
-/* 弹窗样式 */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.6);
-}
+                                                                                        /* 弹窗样式 */
+                                                                                        .modal {
+                                                                                          display: none;
+                                                                                            position: fixed;
+                                                                                              z-index: 999;
+                                                                                                left: 0;
+                                                                                                  top: 0;
+                                                                                                    width: 100%;
+                                                                                                      height: 100%;
+                                                                                                        overflow: auto;
+                                                                                                          background-color: rgba(0,0,0,0.6);
+                                                                                                          }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 1em;
-  border: 1px solid #888;
-  width: 300px;
-  text-align: center;
-  border-radius: 8px;
-}
+                                                                                                          .modal-content {
+                                                                                                            background-color: #fefefe;
+                                                                                                              margin: 10% auto;
+                                                                                                                padding: 1em;
+                                                                                                                  border: 1px solid #888;
+                                                                                                                    width: 300px;
+                                                                                                                      text-align: center;
+                                                                                                                        border-radius: 8px;
+                                                                                                                        }
 
-.modal-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
+                                                                                                                        .modal-content img {
+                                                                                                                          width: 100%;
+                                                                                                                            height: auto;
+                                                                                                                              border-radius: 4px;
+                                                                                                                              }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
+                                                                                                                              .close {
+                                                                                                                                color: #aaa;
+                                                                                                                                  float: right;
+                                                                                                                                    font-size: 24px;
+                                                                                                                                      font-weight: bold;
+                                                                                                                                        cursor: pointer;
+                                                                                                                                        }
 }
