@@ -1,8 +1,18 @@
 function pay(method) {
-    if (method === 'wechat') {
-      alert("跳转到微信支付二维码页面（此处可接入支付接口）");
-      // 例如 window.location.href = "/pay/wechat";
-    } else if (method === 'usdt') {
-      alert("请使用USDT支付：\n地址：TRX1234567890ABCDEF\n金额：14.99 USDT");
-    }
+  if (method === 'wechat') {
+    document.getElementById("wechatModal").style.display = "block";
+  } else if (method === 'usdt') {
+    alert("请使用USDT支付：\n地址：TRX1234567890ABCDEF\n金额：14.99 USDT");
   }
+}
+
+function closeModal() {
+  document.getElementById("wechatModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById("wechatModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}

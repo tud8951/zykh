@@ -14,9 +14,19 @@
   <main>
     <div class="product-card">
       <h2>高级工具软件</h2>
-      <p>一款功能强大的工具，适用于Windows/Mac</p>
+      <p>一款功能强大的工具，适用于 Windows / Mac</p>
       <p class="price">价格：¥99 / $14.99</p>
-      
+
+      <div class="pricing">
+        <h3>⚠️ 收费标准：</h3>
+        <ul>
+          <li>• 套餐1：50元/人</li>
+          <li>• 套餐2：100元/人</li>
+          <li>• 套餐3：150元/人</li>
+          <li>• 套餐4：200元/人</li>
+        </ul>
+      </div>
+
       <div class="payment-options">
         <button onclick="pay('wechat')">微信支付</button>
         <button onclick="pay('usdt')">USDT支付</button>
@@ -27,6 +37,15 @@
   <footer>
     <p>&copy; 2025 软件商城. 保留所有权利。</p>
   </footer>
+
+  <!-- 微信支付弹窗 -->
+  <div id="wechatModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img src="img/kh.jpg" alt="微信支付二维码" />
+      <p>请使用微信扫码支付</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
