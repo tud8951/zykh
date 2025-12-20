@@ -6,55 +6,150 @@
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
   <title>社工库-州长 专业开户</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    :root{--bg:#0b1220;--card:#0f172a;--muted:#9ca3af;--accent:#06b6d4;--gold:#ffd54a}
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#030417 0%, #071226 100%); color:#e6eef6}
+    header{padding:20px 18px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.03)}
+    header h1{margin:0;font-size:20px;letter-spacing:0.6px}
+    main{display:flex;justify-content:center;padding:28px 14px}
+    .container{width:100%;max-width:1100px;display:flex;gap:20px;align-items:flex-start}
+    .product-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03); box-shadow:0 8px 40px rgba(2,6,23,0.6);flex:2;min-width:0}
+    /* 右侧装饰图区域 */
+    .aside{flex:1;max-width:420px;min-width:500px}
+    .aside img{width:100%;height:auto;border-rdius:12px;display:block;object-fit:cover;box-shadow:0 8px 30px rgba(2,6,23,0.5);border:1px solid rgba(255,255,255,0.03)}
+    .product-card h2{margin:0 0 10px 0;color:var(--gold)}
+    .product-card p.lead{color:var(--muted);margin:0 0 16px 0}
+    .features{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+    .feature{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:8px;color:#cbd5e1;font-size:13px}
+
+    /* 价格占位卡 */
+    .price-section { display:flex; justify-content:center; margin:18px 0; }
+    .price-card { max-width:820px; width:100%; background: linear-gradient(135deg,#111827 0%, #0f172a 100%); color:#f8fafc; padding:22px; border-radius:12px; box-shadow:0 8px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.04); }
+    .price-card h3 { margin:0 0 8px 0; font-size:20px; color:var(--gold); }
+    .price-sub { margin:0 0 14px 0; color:#cbd5e1; font-size:14px }
+    .price-img { display:none; }
+    .tiers { display:flex; gap:12px; flex-wrap:wrap; }
+    .tier { background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:12px 14px; border-radius:10px; flex:1 1 200px; min-width:180px; }
+    .tier h4 { margin:0 0 6px 0; font-size:16px; color:#fff; }
+    .amount { margin:0; color:var(--muted); font-weight:600; }
+    .contact-btn { display:inline-block; margin-top:14px; background:var(--accent); color:#042029; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700; }
+
+    .meta{margin-top:12px;color:#9aa6b8;font-size:13px}
+    footer{padding:14px;text-align:center;color:#8797a8;font-size:13px;margin-top:18px}
+    @media (max-width:720px){ .container{flex-direction:column;align-items:stretch} .tiers{flex-direction:column} .tier:first-child{display:none} .product-card{padding:16px;order:0} .aside{order:1;max-width:100%;margin-top:16px;display:none} .price-sub{display:none} .price-img{display:block;width:100%;height:auto;margin:12px 0;border-radius:8px} .features{justify-content:flex-start} }
+    /* 表格展示样式 */
+    .table-section{margin-top:22px}
+    .table-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+    .table-controls input[type="text"]{padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#e6eef6}
+    .table-controls .file-input{color:#e6eef6}
+    .data-table{width:100%;border-collapse:collapse;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border-radius:8px;overflow:hidden}
+    .data-table th, .data-table td{padding:10px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.03);font-size:14px}
+    .data-table thead th{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));color:#f8fafc;font-weight:700}
+    .data-table tbody tr:hover{background:rgba(255,255,255,0.02)}
+    .empty-note{color:#9aa6b8;padding:14px}
+    @media (max-width:720px){ .data-table th,.data-table td{padding:8px} }
+  </style>
 </head>
 <body>
   <header>
-    <h1>社工库-州长 专业开户</h1>
+    <h1>社工库-州长</h1>
   </header>
 
   <main>
-    <div class="product-card">
-      <h2>最强开户工具</h2>
-      <p>✨个户全户✨婚姻名下号码✨名下房产✨
-        ✨犯罪在逃✨模糊找人✨
-        ✨冻结原因✨社保地址✨
-        ✨宽带地址✨关联一切✨
-        ✨三网位置️✨三网机主✨
-        ✨三网话单✨定位找人✨
-        ✨手机轨迹✨快递地址✨
-        ✨淘宝地址✨微信反查✨
-        ✨微信流水✨支付流水✨
-        ✨微好友提✨Q 好友提✨
-        ✨护照正反✨名下车档✨
-        ✨三页汽车✨汽车违章✨
-        ✨支付码反✨历史户籍✨
-        ✨身份轨迹✨小档汽车✨
-        ✨车辆轨迹✨企业法人✨
-        ✨身份正反✨飞火记录✨
-        ✨银行反查✨支付宝机✨
-        ✨银行卡名✨银行流水✨
-      </p>
-      <p class="price">⚠️ 收费标准：    
-        • 电话开户：50元/人  
-        • 微信，QQ，抖音，快手，游戏开户：100元/人  
-        • 开房记录：150元/10年内 
-        • 超级开户：200元/人
-      </p>
-      
-      社工库客服（Telegram）：<a href="https://t.me/ShegongkuZhouzhang">社工库-州长</a></br>
-      私信被限（Telegram）：<a href="https://t.me/QingbaojuZhouzhangsx_Bot">社工库双向客服</a></br>
-      社工库州长频道（Telegram）：<a href="https://t.me/QingbaojuZhouzhang">官方频道</a>
+    <div class="container">
+      <div class="product-card">
+        <h2>我们的说明</h2>
+        <p class="lead">此页面为占位演示，所有示例内容均为脱敏与合规模板。具体服务与报价请通过下方联系方式私讯确认，平台不在页面公开敏感信息。</p>
 
-      <div class="payment-options">
-        <button onclick="window.location.href='pay.html'">微信支付</button>
+        <div class="features">
+          <div class="feature">合规咨询</div>
+          <div class="feature">企业合作</div>
+          <div class="feature">技术支持</div>
+          <div class="feature">定制报价</div>
+          <div class="feature">隐私与合规保障</div>
+        </div>
+
+        <section class="price-section">
+          <div class="price-card">
+            <h3>⚠️ 收费标准（占位）</h3>
+            <p class="price-sub">为保护用户与第三方隐私，页面仅展示占位分类。请通过官方渠道私讯获取合规服务与报价。</p>
+            <img class="price-img" src="img/jg.jpg" alt="装饰图" />
+            <div class="tiers">
+              <div class="tier">
+                <h4>基础咨询</h4>
+                <p class="amount">示例：请私询</p>
+              </div>
+              <div class="tier">
+                <h4>专业服务</h4>
+                <p class="amount">示例：请私询</p>
+              </div>
+              <div class="tier">
+                <h4>企业方案</h4>
+                <p class="amount">示例：请私询</p>
+              </div>
+            </div>
+            <a class="contact-btn" href="https://t.me/CIA_ZC" target="_blank" rel="noreferrer">联系客服（Telegram）</a>
+            <p class="meta">渠道与价格随时波动，具体以私聊确认为准。</p>
+          </div>
+        </section>
+
+        <div class="meta">官方联系方式：
+          <br>客服（Telegram）：<a href="https://t.me/CIA_ZC" style="color:#9cdff0">社工库-州长</a>
+          <br>双向客服（Telegram）：<a href="https://t.me/QingbaojuZhouzhangsx_Bot" style="color:#9cdff0">社工库双向客服</a>
+          <br>频道（Telegram）：<a href="https://t.me/QingbaojuZhouzhang" style="color:#9cdff0">官方频道</a>
+        </div>
+
+        <div style="margin-top:16px">
+          <button onclick="window.location.href='pay.html'" style="background:#ffd54a;color:#031018;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700">支付方式</button>
+        </div>
+        
+        
       </div>
+      <aside class="aside">
+        <img src="img/jg.jpg" alt="装饰图" />
+      </aside>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 社工库-州长. 保留所有权利。</p>
+    <p>&copy; 2025 <a href="https://t.me/CIA_ZC" style="color:#9cdff0">社工库-州长</a></p>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // 表格操作脚本（CSV 功能已彻底移除）
+    function populateTable(rows){
+      const tbody = document.querySelector('#dataTable tbody');
+      tbody.innerHTML='';
+      rows.forEach((r,idx)=>{
+        const tr = document.createElement('tr');
+        // 如果 CSV 每行少于6列，补齐；如果多于6列，只取前6列
+        const cols = r.slice(0,6).concat(Array(Math.max(0,6-r.length)).fill(''));
+        cols.forEach(c=>{ const td=document.createElement('td'); td.textContent=c; tr.appendChild(td); });
+        tbody.appendChild(tr);
+      });
+      document.getElementById('emptyNote').style.display = rows.length? 'none':'block';
+    }
+
+    function filterTable(){
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const trs = document.querySelectorAll('#dataTable tbody tr');
+      trs.forEach(tr=>{
+        const text = tr.textContent.toLowerCase();
+        tr.style.display = text.includes(q)?'':'none';
+      });
+    }
+
+    function resetTable(){
+      const sample = [
+        ['1','示例服务 A','示例信息','请私询','请私询','示例备注'],
+        ['2','示例服务 B','示例信息','请私询','请私询','示例备注']
+      ];
+      populateTable(sample);
+      document.getElementById('searchInput').value='';
+    }
+
+    // 导出功能已移除
+  </script>
 </body>
 </html>

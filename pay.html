@@ -18,6 +18,7 @@
             color: white;
             text-align: center;
             padding: 1em;
+            position: relative;
         }
 
         main {
@@ -57,7 +58,7 @@
         }
 
         .payment-options button:last-child {
-            background-color: #ffcc00; /* USDT黄 */
+            background-color: #fbff00; /* USDT黄 */
             color: black;
         }
 
@@ -67,23 +68,138 @@
             height: auto;  /* 保持比例 */
             display: block;  /* 确保居中 */
         }
+        #qrContainer{
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-8px) scale(0.99);
+            transition: max-height 360ms ease, opacity 260ms ease, transform 260ms ease;
+        }
+        #qrContainer.open{
+            max-height: 1000px;
+            opacity: 1;
+            transform: none;
+        }
+        .close-btn{
+            display: inline-block;
+            margin: 0.5em 0 0.8em 0;
+            padding: 0.4em 0.8em;
+            border-radius: 6px;
+            border: none;
+            background:#666;
+            color:#fff;
+            cursor:pointer;
+        }
+        .close-btn:active{transform:translateY(1px)}
+        .usdt-address{
+            margin-top:0.6em;
+            padding:0.6em 0.8em;
+            background:#fafafa;
+            border:1px solid #e6e6e6;
+            border-radius:6px;
+            font-family:monospace;
+            word-break:break-all;
+            font-size:0.95em;
+        }
+        .home-btn{
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffffff;
+            color: #111;
+            padding: 0.4em 0.8em;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>请使用微信扫码付款</h1>
+        <h1>付款方式</h1>
+        <a href="index.html" class="home-btn">返回主页</a>
     </header>
 
     <main>
-            <img src="img/kh.jpg" alt="微信收款码" class="qr-image">
+            <div class="product-card">
+                <h2>微信支付</h2>
+                <p class="price">请选择付款方式</p>
+                <div class="payment-options">
+                    <button id="weixinBtn">微信支付</button>
+                    <button id="usdtBtn">USDT支付</button>
+                </div>
+                <div id="qrContainer">
+                    <button id="closeQr" class="close-btn">关闭</button>
+                    <img id="weixinImg" src="img/kh.jpg" alt="微信收款码" class="qr-image" style="display:none;">
+                    <div id="usdtAddress" class="usdt-address" style="display:none;">TDGEwPudjrEewbAYfXv6KyDNq7HVczHr1Q</div>
+                    <img id="usdtImg" src="img/usdt.jpg" alt="USDT收款码" class="qr-image" style="display:none;">
+                </div>
+            </div>
     </main>
 
     <footer>
-        社工库客服（Telegram）：<a href="https://t.me/ShegongkuZhouzhang">社工库-州长</a></br>
+        社工库客服（Telegram）：<a href="https://t.me/CIA_ZC">社工库-州长</a></br>
         私信被限（Telegram）：<a href="https://t.me/QingbaojuZhouzhangsx_Bot">社工库双向客服</a></br>
         社工库州长频道（Telegram）：<a href="https://t.me/QingbaojuZhouzhang">官方频道</a>
     </footer>
+
+<script>
+    (function(){
+        var weixinBtn = document.getElementById('weixinBtn');
+        var usdtBtn = document.getElementById('usdtBtn');
+        var qrContainer = document.getElementById('qrContainer');
+        var closeBtn = document.getElementById('closeQr');
+        var weixinImg = document.getElementById('weixinImg');
+        var usdtImg = document.getElementById('usdtImg');
+        var usdtAddress = document.getElementById('usdtAddress');
+
+        function showImage(type){
+            if(type === 'weixin'){
+                weixinImg.style.display = 'block';
+                usdtImg.style.display = 'none';
+                if(usdtAddress) usdtAddress.style.display = 'none';
+                weixinBtn.disabled = true;
+                weixinBtn.style.opacity = '0.6';
+            } else if(type === 'usdt'){
+                weixinImg.style.display = 'none';
+                usdtImg.style.display = 'block';
+                if(usdtAddress) usdtAddress.style.display = 'block';
+                usdtBtn.disabled = true;
+                usdtBtn.style.opacity = '0.6';
+            }
+            qrContainer.classList.add('open');
+            qrContainer.scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+
+        function closeQr(){
+            qrContainer.classList.remove('open');
+            weixinImg.style.display = 'none';
+            usdtImg.style.display = 'none';
+            if(usdtAddress) usdtAddress.style.display = 'none';
+            if(weixinBtn){ weixinBtn.disabled = false; weixinBtn.style.opacity = ''; }
+            if(usdtBtn){ usdtBtn.disabled = false; usdtBtn.style.opacity = ''; }
+        }
+
+        if(weixinBtn && qrContainer){
+            weixinBtn.addEventListener('click', function(){ showImage('weixin'); });
+        }
+        if(usdtBtn && qrContainer){
+            usdtBtn.addEventListener('click', function(){ showImage('usdt'); });
+        }
+        if(closeBtn && qrContainer){
+            closeBtn.addEventListener('click', closeQr);
+        }
+        // 支持按 Esc 关闭
+        document.addEventListener('keydown', function(e){
+            if(e.key === 'Escape' && qrContainer.classList.contains('open')){
+                closeQr();
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>
